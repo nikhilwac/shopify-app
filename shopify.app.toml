@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "a41ee95b3b50a8010ae0d60fb61a408b"
+name = "nikhify"
+handle = "nikhify"
+application_url = "https://differently-universal-passing-restrict.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "nikhify.myshopify.com"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://differently-universal-passing-restrict.trycloudflare.com/auth/callback",
+  "https://differently-universal-passing-restrict.trycloudflare.com/auth/shopify/callback",
+  "https://differently-universal-passing-restrict.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks"
+
+[pos]
+embedded = false
